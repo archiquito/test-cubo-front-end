@@ -1,54 +1,68 @@
-# React + TypeScript + Vite
+# Test Cubo Front End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é a interface web (front-end) do desafio Test Cubo, desenvolvido com React, TypeScript e Vite.
 
-Currently, two official plugins are available:
+> **Atenção:** Para funcionamento completo, este front-end consome uma API backend desenvolvida em Node.js.  
+> O repositório da API está disponível em: [Test Cubo Node API](https://github.com/archiquito/test-cubo-node-ap)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Como rodar o projeto
 
-## Expanding the ESLint configuration
+### Pré-requisitos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (versão 18 ou superior recomendada)
+- npm ou yarn
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Instalação
+
+1. Clone este repositório:
+   ```sh
+   git clone https://github.com/SEU_USUARIO/test-cubo-front-end.git
+   cd test-cubo-front-end
+   ```
+
+2. Instale as dependências:
+   ```sh
+   npm install
+   ```
+   ou
+   ```sh
+   yarn
+   ```
+
+### Rodando em modo desenvolvimento
+
+```sh
+npm run dev
+```
+ou
+```sh
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+O projeto estará disponível em [http://localhost:3000](http://localhost:3000).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build para produção
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```sh
+npm run build
 ```
+ou
+```sh
+yarn build
+```
+
+Os arquivos otimizados ficarão na pasta `dist/`.
+
+### Pré-visualizar o build de produção
+
+```sh
+npm run preview
+```
+ou
+```sh
+yarn preview
+```
+
+---
+
+Certifique-se de que a [API Node.js](https://github.com/archiquito/test-cubo-node-ap) esteja rodando para o funcionamento completo do front-end.
